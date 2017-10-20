@@ -859,6 +859,15 @@
           "dark": "#A7A8A9",
           "highContrast": "#A7A8A9"
         }
+      },
+      {
+        "id": "git.color.staged",
+        "description": "Color for staged resources",
+        "defaults": {
+          "light": "#770707",
+          "dark": "#8f0d0d",
+          "highContrast": "#8f0d0d"
+        }
       }
     ]
   },

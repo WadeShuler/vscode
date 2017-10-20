@@ -85,7 +85,7 @@ export class Resource implements SourceControlResourceState {
 	private static Icons = {
 		light: {
 			Modified: getIconUri('status-modified', 'light'),
-			Added: getIconUri('status-added', 'light'),
+			Added: getIconUri('status-staged', 'light'),
 			Deleted: getIconUri('status-deleted', 'light'),
 			Renamed: getIconUri('status-renamed', 'light'),
 			Copied: getIconUri('status-copied', 'light'),
@@ -95,7 +95,7 @@ export class Resource implements SourceControlResourceState {
 		},
 		dark: {
 			Modified: getIconUri('status-modified', 'dark'),
-			Added: getIconUri('status-added', 'dark'),
+			Added: getIconUri('status-staged', 'dark'),
 			Deleted: getIconUri('status-deleted', 'dark'),
 			Renamed: getIconUri('status-renamed', 'dark'),
 			Copied: getIconUri('status-copied', 'dark'),
@@ -131,7 +131,7 @@ export class Resource implements SourceControlResourceState {
 		switch (this.type) {
 			case Status.INDEX_MODIFIED: return localize('index modified', "Index Modified");
 			case Status.MODIFIED: return localize('modified', "Modified");
-			case Status.INDEX_ADDED: return localize('index added', "Index Added");
+			case Status.INDEX_ADDED: return localize('index added', "Staged");
 			case Status.INDEX_DELETED: return localize('index deleted', "Index Deleted");
 			case Status.DELETED: return localize('deleted', "Deleted");
 			case Status.INDEX_RENAMED: return localize('index renamed', "Index Renamed");
@@ -188,6 +188,8 @@ export class Resource implements SourceControlResourceState {
 			case Status.INDEX_MODIFIED:
 			case Status.MODIFIED:
 				return { priority: 2, title, abbreviation: localize('modified, short', "M"), bubble: true, color: new ThemeColor('git.color.modified') };
+			case Status.INDEX_ADDED:
+				return { priority: 3, title, abbreviation: localize('staged, short', "S"), bubble: true, color: new ThemeColor('git.color.staged') };
 			default:
 				return undefined;
 		}
