@@ -154,7 +154,10 @@
                         },
                         "filter.commentTrigger": {
                             "type": "array",
-                            "default": ["id", "class"],
+                            "default": [
+                                "id",
+                                "class"
+                            ],
                             "description": "%emmetPreferencesFilterCommentTrigger%"
                         }
                     }
